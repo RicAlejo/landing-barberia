@@ -21,10 +21,11 @@ body {
 
 /* Header / Portada */
 header {
-  background: url("img/portada.jpg") center/cover no-repeat;
+  background: url("img/portada.png") center/cover no-repeat;
   color: var(--color-bg-light);
   text-align: center;
   padding: 80px 20px;
+  /* background-color: var(--color-bg-dark); */
 }
 header h1 {
   font-size: 3rem;
