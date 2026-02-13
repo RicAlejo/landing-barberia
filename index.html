@@ -1,50 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barbería El Corte Fino</title>
-  <link rel="stylesheet" href="estilos.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peluquería El Corte Fino</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <!-- Portada -->
+    <header>
+      <h1>El Corte Fino</h1>
+      <p>Tu estilo, nuestra pasión ✂️</p>
+      <a href="#servicios">Ver servicios</a>
+    </header>
 
-  <header>
-    <h1>Peluquería Cabellos Lili</h1>
-    <p>Cortes modernos y clásicos para ti</p>
-    <a href="#contact">Reserva tu turno</a>
-  </header>
+    <!-- Servicios -->
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Corte de Cabello</h3>
+          <p>Duración: 30 min – Precio: $10</p>
+        </div>
+        <div class="service-card">
+          <h3>Tinte</h3>
+          <p>Duración: 1h – Precio: $20</p>
+        </div>
+        <div class="service-card">
+          <h3>Tratamiento Capilar</h3>
+          <p>Duración: 45 min – Precio: $15</p>
+        </div>
+      </div>
+      <a href="#agenda" class="btn">Reservar turno</a>
+    </section>
 
-  <section class="services">
-    <div class="service-card">
-      <h3>Corte clásico</h3>
-      <p>Precisión y estilo tradicional</p>
+    <!-- Agenda / Reserva -->
+
+    <section id="agenda">
+      <h2>Reserva tu turno</h2>
+      <form class="booking-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required />
+
+        <label for="servicio">Servicio:</label>
+        <select id="servicio" name="servicio" required>
+          <option value="">Selecciona un servicio</option>
+          <option value="corte">Corte de Cabello</option>
+          <option value="tinte">Tinte</option>
+          <option value="tratamiento">Tratamiento Capilar</option>
+        </select>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required />
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required />
+
+        <button type="submit">Reservar</button>
+      </form>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería</h2>
+      <div class="slider">
+        <div class="slides">
+          <img src="img/corte1.jpeg" alt="Corte moderno" />
+          <img src="img/corte2.webp" alt="Peinado elegante" />
+          <img src="img/corte3.webp" alt="Antes y después" />
+          <img src="img/corte4.webp" alt="Barbero en acción" />
+        </div>
+        <!-- Botones de navegación -->
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+
+      <!-- Miniaturas -->
+      <div class="thumbnails">
+        <img src="img/corte1.jpeg" alt="Miniatura 1" onclick="goToSlide(0)" />
+        <img src="img/corte2.webp" alt="Miniatura 2" onclick="goToSlide(1)" />
+        <img src="img/corte3.webp" alt="Miniatura 3" onclick="goToSlide(2)" />
+        <img src="img/corte4.webp" alt="Miniatura 4" onclick="goToSlide(3)" />
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <img id="lightbox-img" src="" alt="Imagen ampliada" />
     </div>
-    <div class="service-card">
-      <h3>Fade moderno</h3>
-      <p>Tendencias actuales de peluqería</p>
-    </div>
-    <div class="service-card">
-      <h3>Barba y perfilado</h3>
-      <p>Detalles que marcan la diferencia</p>
-    </div>
-  </section>
 
-  <section class="about">
-    <h2>Sobre nosotros</h2>
-    <p>En Cabellos Lili combinamos experiencia, estilo y atención personalizada para que salgas con el look que buscas.</p>
-  </section>
+    <!-- Equipo -->
+    <section id="equipo">
+      <h2>Nuestro Equipo</h2>
+      <div class="team">
+        <div class="member">
+          <img src="img/barbero1.webp" alt="Barbero Juan" />
+          <h3>Juan Pérez</h3>
+          <p>Especialista en cortes modernos</p>
+        </div>
+        <div class="member">
+          <img src="img/barbero2.webp" alt="Estilista María" />
+          <h3>María López</h3>
+          <p>Experta en tintes y peinados</p>
+        </div>
+      </div>
+    </section>
 
-  <section class="contact" id="contact">
-    <h2>Contacto</h2>
-    <p>📍 Dirección: Calle 29 Playa</p>
-    <p>⏰ Domingo a viernes: 9:00 – 19:00</p>
-    <p>📞 WhatsApp: +53 123 456 789</p>
-    <a href="https://wa.me/53123456789" target="_blank">Enviar WhatsApp</a>
-  </section>
+    <!-- Testimonios -->
+    <section id="testimonios">
+      <h2>Opiniones de Clientes</h2>
+      <blockquote>
+        "Excelente atención y resultados increíbles." – Ana
+      </blockquote>
+      <blockquote>
+        "El mejor corte que me he hecho en años." – Carlos
+      </blockquote>
+    </section>
 
-  <footer>
-    &copy; 2026 Cabellos Lili. Todos los derechos reservados.
-  </footer>
+    <!-- Contacto -->
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Dirección: Calle 123, Centro Habana</p>
+      <p>Teléfono: +53 55555555</p>
+      <p>Email: contacto@elcortefino.com</p>
+      <a href="https://wa.me/5355555555" target="_blank">WhatsApp</a>
+      <div id="mapa">
+        <!-- Aquí puedes insertar un iframe de Google Maps -->
+      </div>
+    </section>
 
-</body>
+    <!-- Horarios -->
+    <section id="horarios">
+      <h2>Horarios de Atención</h2>
+      <p>Lunes a Viernes: 9:00 AM – 7:00 PM</p>
+      <p>Sábados: 9:00 AM – 3:00 PM</p>
+    </section>
+
+    <!-- Promociones -->
+    <section id="promociones">
+      <h2>Promociones</h2>
+      <p>¡Corte + Tinte con 20% de descuento este mes!</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Peluquería El Corte Fino</p>
+      <p>
+        Síguenos en: <a href="#">Facebook</a> |
+        <a href="#">Instagram</a>
+      </p>
+    </footer>
+
+    <script>
+      let currentIndex = 0;
+
+      function moveSlide(step) {
+        const slides = document.querySelector(".slides");
+        const totalSlides = slides.children.length;
+        currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      function goToSlide(index) {
+        const slides = document.querySelector(".slides");
+        currentIndex = index;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      // Auto-play cada 5 segundos
+      setInterval(() => moveSlide(1), 5000);
+
+      // Agenda
+      document
+        .querySelector(".booking-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const nombre = document.getElementById("nombre").value;
+          const telefono = document.getElementById("telefono").value;
+          const servicio = document.getElementById("servicio").value;
+          const fecha = document.getElementById("fecha").value;
+          const hora = document.getElementById("hora").value;
+
+          const mensaje = `Hola, soy ${nombre}. Quiero reservar un turno para ${servicio} el ${fecha} a las ${hora}. Mi teléfono es ${telefono}.`;
+          const url = `https://wa.me/5355555555?text=${encodeURIComponent(mensaje)}`;
+
+          window.open(url, "_blank");
+        });
+    </script>
+  </body>
 </html>
